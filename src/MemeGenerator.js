@@ -12,7 +12,7 @@ class MemeGenerator extends Component {
         this.handleChange = this.handleChange.bind(this)
     }
 
-    handleChange() {
+    handleChange(event) {
         const {name, value} = event.target
         this.setState({ [name]: value })
     }
@@ -47,6 +47,11 @@ class MemeGenerator extends Component {
                 />
                     <button>Generate Meme</button>
                 </form>
+                <div class="meme">
+                    <img src={this.state.randomImg} alt="" />
+                    <h2 className="top">{this.state.topText}</h2>
+                    <h2 className="bottom">{this.state.bottomText}</h2>
+                </div>
             </div>
         )
     }
